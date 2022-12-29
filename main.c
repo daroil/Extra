@@ -6,19 +6,11 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:38:01 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/12/29 20:25:42 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/12/29 23:52:58 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include "libft/libft.h"
-# include <sys/wait.h>
-# include <sys/types.h>
-# include <sys/uio.h>
+# include "pipex.h"
 
 char	*find_path(char **envp)
 {
