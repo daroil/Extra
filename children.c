@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 02:45:00 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/12/30 03:26:10 by dhendzel         ###   ########.fr       */
+/*   Updated: 2022/12/30 03:36:05 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,6 @@ static char	*get_cmd(char **paths, char *cmd)
 		paths++;
 	}
 	return (NULL);
-}
-
-int	msg(char *error)
-{
-	write(2, error, ft_strlen(error));
-	return (1);
-}
-
-void	msg_error(char *error)
-{
-	perror(error);
-	exit(1);
 }
 
 void	first_child(t_pipex *pipex, char **ag, char **envp)

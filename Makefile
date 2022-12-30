@@ -6,13 +6,13 @@
 #    By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 15:26:49 by dhendzel          #+#    #+#              #
-#    Updated: 2022/12/30 03:17:47 by dhendzel         ###   ########.fr        #
+#    Updated: 2022/12/30 03:36:23 by dhendzel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-SRCS = 	pipex.c children.c free.c
+SRCS = 	pipex.c children.c free.c msg.c
 
 NAME =  pipex
 LIBFT	:= ./libft
