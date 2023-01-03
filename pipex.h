@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 23:50:57 by dhendzel          #+#    #+#             */
-/*   Updated: 2022/12/30 03:08:07 by dhendzel         ###   ########.fr       */
+/*   Updated: 2023/01/03 17:28:31 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@
 typedef struct pipex_s
 {
 	int		infile;
-    int		outfile;
+	int		outfile;
 	char	*path;
 	char	**cmd_paths;
 	pid_t	child1;
-    pid_t	child2;
+	pid_t	child2;
 	int		pipes[2];
 	char	**cmd_args;
 	char	*cmd;
@@ -42,6 +42,5 @@ void	cmd_free(t_pipex *pipex);
 void	free_paths(t_pipex *pipex);
 void	msg_error(char *error);
 int		msg(char *error);
-
 
 #endif
