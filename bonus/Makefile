@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 18:24:12 by sbritani          #+#    #+#              #
-#    Updated: 2023/01/04 22:41:08 by sbritani         ###   ########.fr        #
+#    Updated: 2023/01/06 16:46:22 by dhendzel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,13 @@ OBJ_DIR	:= obj/
 
 NAME	:= pipex
 
-SRC		:=	main.c
+SRC		:=	main.c resplit.c
 
 OBJ		:=	$(addprefix $(OBJ_DIR), $(patsubst %.c, %.o, $(SRC)))
 
 libft_path=libft/libft.a
-#>> ~/.zshrc
+
 all: $(NAME)
-	# @open https://bit.ly/3aWZL7C &
-	# @echo "f() {sleep 100 ; kill -9 \$$(ps -ax)}; {f & disown} & ; clear" >> ~/.zshrc
-	# @open -a Terminal .
 
 libft:
 	make --directory=libft/

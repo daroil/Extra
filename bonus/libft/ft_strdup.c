@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 23:41:45 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/04 02:50:19 by sbritani         ###   ########.fr       */
+/*   Updated: 2023/01/06 17:24:45 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	res[i] = '\0';
-
-	execve("asd", (char**)"asd", (char**)"asd");
 	return (res);
 }

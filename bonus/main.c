@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 18:19:59 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/05 03:10:31 by sbritani         ###   ########.fr       */
+/*   Updated: 2023/01/06 17:19:09 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ void checkleaks()
 {
 	system("leaks pipex");
 }
-
-
 
 //dup2(new value, old variable)
 
@@ -120,17 +118,6 @@ pid_t	*make_pids(int n)
 	return (res);
 }
 
-// void waitress(pid_t *pids, int len)
-// {
-// 	int i;
-
-	
-// 	while(len)
-// 	{
-		
-// 	}
-// }
-
 int	main(int argc, char **argv, char **env)
 {
 	char **paths;
@@ -155,6 +142,7 @@ int	main(int argc, char **argv, char **env)
 	fd3 = open("logs", O_RDWR | O_TRUNC | O_CREAT, 0644);
 	fd3 = fd3 - 1;
 	paths = get_paths(env);
+	i = 0;
 	while (i <= number_of_pipes)
 	{
 		pids[i] = fork();
@@ -163,20 +151,26 @@ int	main(int argc, char **argv, char **env)
 			if (i == 0)
 			{
 				dup2(fd, STDIN_FILENO);
-				dup2(truby[0][1], STDOUT_FILENO); 
+				// dup2(truby[0][1], STDOUT_FILENO); 
 			}
 			else if (i == number_of_children - 1)
 			{
 				dup2(truby[i-1][0], STDIN_FILENO);
-				dup2(fd2, STDOUT_FILENO); 
+				// dup2(fd2, STDOUT_FILENO); 
 			}
 			else
 			{
 				dup2(truby[i - 1][0], STDIN_FILENO);
-				dup2(truby[i][1], STDOUT_FILENO); 
+				// dup2(truby[i][1], STDOUT_FILENO); 
 			}
 			close_truby(truby, i, number_of_pipes);
-			char **args = ft_split(argv[i + 2], " ");
+			char **args = ft_resplit(argv[i + 2], " ");
+			int j = 0;
+			while(args[j])
+			{
+				printf("args%d %s\n",j,args[j]);
+				j++;
+			}
 			char *path = valid_path(paths, args[0]); 
 			execve(path, args, env);
 		}

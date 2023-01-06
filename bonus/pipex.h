@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 18:19:57 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/04 22:55:51 by sbritani         ###   ########.fr       */
+/*   Updated: 2023/01/06 16:46:48 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,7 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <fcntl.h>
+
+char	**ft_resplit(char const *s, char *c);
+
 #endif
