@@ -44,7 +44,7 @@ char	**get_paths(char **env);
 char	*valid_path(char **paths, char *filename);
 int		**make_truby(int n);
 void	close_truby(int **truby, int cur, int len);
-void	plumber(int **truby);
+void	plumber(t_pipex *pipex);
 pid_t	*make_pids(int n);
 void	waitress(pid_t *pids, int len);
 char	**transform_args_to_cmds(char **argv);

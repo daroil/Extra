@@ -54,19 +54,20 @@ void	close_truby(int **truby, int cur, int len)
 	}
 }
 
-void	plumber(int **truby)
+void	plumber(t_pipex *pipex)
 {
 	int	i;
 
 	i = 0;
-	while (truby[i])
+
+	while (pipex->truby[i])
 	{
-		close(truby[i][1]);
-		close(truby[i][0]);
-		free(truby[i]);
+		close(pipex->truby[i][1]);
+		close(pipex->truby[i][0]);
+		free(pipex->truby[i]);
 		i++;
 	}
-	free(truby);
+	// free(pipex->truby);
 }
 
 void	dups(int fd1, int fd2)

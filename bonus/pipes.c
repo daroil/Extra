@@ -40,10 +40,10 @@ int	pipex_init(t_pipex *pipex, char **argv, int argc, char **env)
 
 void	clean_pipex(t_pipex *pipex)
 {
-	plumber(pipex->truby);
+	plumber(pipex);
 	if (pipex->here_doc)
 		free(pipex->cmds[0]);
-	free(pipex->cmds);
+	// free(pipex->cmds);
 	waitress(pipex->pids, pipex->number_of_children);
 	close(pipex->fd);
 	close(pipex->fd2);
