@@ -34,9 +34,9 @@ typedef struct s_list
 # define MAXFDS 4096
 
 char	*get_next_line(int fd);
-char	*gn_strjoin(char const *s1, char const *s2);
-int		gn_str_chr(const char *s, int c);
-size_t	gn_strlen(const char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_str_chr(const char *s, int c);
+size_t	ft_strlen(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

@@ -16,7 +16,7 @@ char	*free_connect(char *s1, char *s2)
 {
 	char	*res;
 
-	res = gn_strjoin(s1, s2);
+	res = ft_strjoin(s1, s2);
 	free(s1);
 	return (res);
 }
@@ -35,7 +35,7 @@ char	*remains(char *res)
 		free(res);
 		return (NULL);
 	}
-	line = ft_calloc((gn_strlen(res) - i + 1), sizeof(char));
+	line = ft_calloc((ft_strlen(res) - i + 1), sizeof(char));
 	i++;
 	j = 0;
 	while (res[i])
@@ -84,7 +84,7 @@ char	*fill_buffer(int fd, char *res)
 		}
 		buffer[read_count] = 0;
 		res = free_connect(res, buffer);
-		if (gn_str_chr(buffer, '\n'))
+		if (ft_str_chr(buffer, '\n'))
 			break ;
 	}
 	free(buffer);
