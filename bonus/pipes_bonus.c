@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipes.c                                            :+:      :+:    :+:   */
+/*   pipes_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/07 04:02:19 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/09 16:07:55 by sbritani         ###   ########.fr       */
+/*   Created: 2023/01/09 16:49:33 by sbritani          #+#    #+#             */
+/*   Updated: 2023/01/09 16:51:10 by sbritani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 int	pipex_init(t_pipex *pipex, char **argv, int argc, char **env)
 {
