@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:49:50 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/09 16:50:54 by sbritani         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:40:20 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ char	*repeat_line_n_times(char *str, int n)
 	return (res);
 }
 
+int	buf_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
 void	read_from_to(char *delimimter, int in_fd, int out_fd, int n_of_pipes)
 {
 	char	*buf;
@@ -42,8 +49,8 @@ void	read_from_to(char *delimimter, int in_fd, int out_fd, int n_of_pipes)
 	ft_putstr_fd(pipes, in_fd);
 	ft_putstr_fd("heredoc> ", in_fd);
 	buf = get_next_line(in_fd);
-	while (buf && (ft_strncmp(buf, delimimter, ft_strlen(buf) - 1)
-			|| ft_strlen(buf) == 1))
+	while (buf && (ft_strncmp(buf, delimimter, buf_max(ft_strlen(buf) - 1,
+					ft_strlen(delimimter))) || ft_strlen(buf) == 1))
 	{
 		ft_putstr_fd(pipes, in_fd);
 		ft_putstr_fd("heredoc> ", in_fd);
