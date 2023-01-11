@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 16:48:23 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/09 17:19:29 by sbritani         ###   ########.fr       */
+/*   Created: 2023/01/11 01:53:55 by dhendzel          #+#    #+#             */
+/*   Updated: 2023/01/11 01:53:58 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-// void checkleaks()
-// {
-// 	system("leaks pipex");
-// }
-// atexit(&checkleaks);
 
 void	exit_error(char *exit_message, t_pipex *pipex)
 {

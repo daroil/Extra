@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   paths_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 16:49:22 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/09 16:51:16 by sbritani         ###   ########.fr       */
+/*   Created: 2023/01/11 01:55:20 by dhendzel          #+#    #+#             */
+/*   Updated: 2023/01/11 01:55:22 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

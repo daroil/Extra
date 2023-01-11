@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipes_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 16:49:33 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/09 16:51:10 by sbritani         ###   ########.fr       */
+/*   Created: 2023/01/11 01:55:12 by dhendzel          #+#    #+#             */
+/*   Updated: 2023/01/11 01:55:14 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
