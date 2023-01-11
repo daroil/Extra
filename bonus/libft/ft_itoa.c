@@ -3,63 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 19:44:04 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/18 21:07:33 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/14 19:46:53 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/20 13:44:40 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	int_len(int n)
+static size_t	ft_count_num(int n)
 {
-	int	i;
+	size_t	count;
 
-	i = 0;
-	if (n <= 0)
-		i++;
-	while (n / 10 || n % 10)
-	{
-		i++;
-		n /= 10;
-	}
-	return (i);
-}
-
-static void	rec(long n, int len, char *res)
-{
-	if (n < 10)
-		res[len] = n + '0';
+	if (n > 0)
+		count = 0;
 	else
+		count = 1;
+	while (n != 0)
 	{
-		res[len] = n % 10 + '0';
-		rec(n / 10, len - 1, res);
+		n /= 10;
+		count++;
 	}
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*res;
-	int		len;
-	int		size;
+	char	*num;
+	size_t	size;
 	long	nbr;
 
-	len = 0;
 	nbr = n;
-	size = int_len(nbr);
-	res = malloc((size + 1) * sizeof(char));
-	if (!res)
+	if (nbr < 0)
+		nbr *= -1;
+	size = ft_count_num(n);
+	num = malloc (sizeof(char) * (size + 1));
+	if (!num)
 		return (NULL);
-	else
+	num[size] = '\0';
+	size--;
+	while (nbr > 0)
 	{
-		if (nbr < 0)
-		{
-			res[len++] = '-';
-			nbr *= -1;
-		}
-		rec(nbr, size -1, res);
+		num[size] = (nbr % 10) + '0';
+		nbr /= 10;
+		size--;
 	}
-	res[size] = '\0';
-	return (res);
+	if (size == 0 && num[1] == '\0')
+		num[0] = '0';
+	else if (size == 0 && num[1] != '\0')
+		num[0] = '-';
+	return (num);
 }

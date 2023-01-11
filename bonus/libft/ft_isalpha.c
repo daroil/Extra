@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:57:40 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/14 00:12:55 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/10 19:41:39 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/16 14:12:10 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if (('a' <= c && 'z' >= c) || ('A' <= c && 'Z' >= c))
-	{
+	if (c >= 'a' && c <= 'z')
 		return (1);
-	}
+	if (c >= 'A' && c <= 'Z')
+		return (1);
 	return (0);
 }

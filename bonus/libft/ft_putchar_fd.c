@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 23:23:53 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/16 23:26:01 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/15 13:43:59 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/15 13:46:39 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

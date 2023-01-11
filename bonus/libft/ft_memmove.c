@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 23:15:35 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/25 23:16:23 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/11 15:08:46 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/15 16:23:10 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

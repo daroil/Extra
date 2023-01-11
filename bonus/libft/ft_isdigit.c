@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 21:37:08 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/10 21:41:34 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/10 19:43:46 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/16 14:13:35 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if ('0' <= c && '9' >= c)
-	{
+	if (c >= '0' && c <= '9')
 		return (1);
-	}
 	return (0);
 }

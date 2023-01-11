@@ -3,27 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 00:32:22 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/18 21:10:06 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/14 14:14:03 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/20 13:50:41 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	ft_char_in_set(char const *set, char c)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
 
 	i = 0;
-	if (!set || !s1)
-		return (NULL);
-	while (ft_strchr(set, s1[i]) && s1[i])
+	while (set[i] != '\0')
+	{
+		if (c == set[i])
+			return (1);
 		i++;
-	j = ft_strlen(s1);
-	while (ft_strchr(set, s1[j]) && j > i)
-		j--;
-	return (ft_substr(s1, i, j + 1 - i));
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*s_trim;
+	size_t	i;
+	size_t	end;
+	size_t	start;
+
+	i = 0;
+	start = 0;
+	while (ft_char_in_set(set, s1[start]) && s1[start] != '\0')
+		start++;
+	end = ft_strlen(s1);
+	while (ft_char_in_set(set, s1[end - 1]) && end > start)
+		end--;
+	s_trim = malloc(end - start + 1);
+	if (!s_trim)
+		return (NULL);
+	while (start < end)
+	{
+		s_trim[i] = s1[start];
+		i++;
+		start++;
+	}
+	s_trim[i] = '\0';
+	return (s_trim);
 }

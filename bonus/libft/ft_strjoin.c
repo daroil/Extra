@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 00:16:14 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/18 21:09:31 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/14 13:08:28 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/16 14:55:14 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len1;
-	size_t	len2;
-	char	*res;
+	size_t	size_1;
+	size_t	size_2;
+	size_t	total_size;
+	char	*s_joined;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	res = malloc((len1 + len2 + 1) * sizeof(char));
-	if (res == NULL)
+	size_1 = ft_strlen(s1);
+	size_2 = ft_strlen(s2);
+	total_size = size_1 + size_2;
+	s_joined = malloc(total_size + 1);
+	if (!s_joined)
 		return (NULL);
-	ft_strlcpy(res, s1, len1 + 1);
-	ft_strlcat(res, s2, len2 + 1 + len1);
-	return (res);
+	ft_strlcpy(s_joined, s1, size_1 + 1);
+	ft_strlcat(s_joined, s2, total_size + 1);
+	return (s_joined);
 }

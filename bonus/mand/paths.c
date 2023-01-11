@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 01:54:01 by dhendzel          #+#    #+#             */
-/*   Updated: 2023/01/11 01:54:03 by dhendzel         ###   ########.fr       */
+/*   Updated: 2023/01/11 01:58:45 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**get_paths(char **env)
 	while (env[++i])
 	{
 		if (!ft_strncmp(env[i], "PATH", 4))
-			mid_res = ft_split(&env[i][5], ":");
+			mid_res = ft_split(&env[i][5], ':');
 	}
 	return (mid_res);
 }

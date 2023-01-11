@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 22:18:56 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/10 22:24:34 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/11 15:08:53 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/16 14:14:05 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (' ' <= c && '~' >= c)
-	{
+	if (c >= 32 && c < 127)
 		return (1);
-	}
 	return (0);
 }

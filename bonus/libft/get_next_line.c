@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 17:29:05 by sbritani          #+#    #+#             */
-/*   Updated: 2022/12/21 21:10:41 by sbritani         ###   ########.fr       */
+/*   Created: 2023/01/11 02:02:41 by dhendzel          #+#    #+#             */
+/*   Updated: 2023/01/11 02:02:43 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

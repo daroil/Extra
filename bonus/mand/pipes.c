@@ -6,7 +6,7 @@
 /*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 01:54:07 by dhendzel          #+#    #+#             */
-/*   Updated: 2023/01/11 01:54:09 by dhendzel         ###   ########.fr       */
+/*   Updated: 2023/01/11 01:59:35 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	pipex_init(t_pipex *pipex, char **argv, int argc, char **env)
 	else
 	{
 		pipex->fd2 = open(argv[argc - 1], O_RDWR | O_CREAT | O_APPEND, 0644);
-		args = ft_split(pipex->cmds[0], " ");
+		args = ft_split(pipex->cmds[0], ' ');
 		read_from_to(args[1], STDIN_FILENO, pipex->truby[0][1],
 			pipex->number_of_pipes);
 		ft_split_clear(args);
@@ -68,7 +68,7 @@ void	piping(t_pipex *pipex, int i, char **env)
 		else
 			dups(pipex->truby[i - 1][0], pipex->truby[i][1]);
 		close_truby(pipex->truby, i, pipex->number_of_pipes);
-		args = ft_split(pipex->cmds[i], " ");
+		args = ft_split(pipex->cmds[i], ' ');
 		path = valid_path(pipex->paths, args[0]);
 		if (!path)
 			error(pipex, args, path);

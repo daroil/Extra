@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 22:07:14 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/10 22:12:04 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/11 11:26:15 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/16 14:12:45 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (0 <= c && 127 >= c)
-	{
+	if (c >= 0 && c <= 127)
 		return (1);
-	}
 	return (0);
 }

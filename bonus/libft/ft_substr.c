@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 23:55:36 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/17 22:45:01 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/14 12:47:04 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/16 15:01:36 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,27 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*substr;
 	size_t	i;
+	size_t	size;
 	size_t	j;
-	char	*res;
 
-	if ((size_t)ft_strlen((char *)s) > len)
-		res = malloc((len + 1) * sizeof(char));
-	else
-		res = malloc((ft_strlen((char *)s) + 1) * sizeof(char));
-	if (res == NULL)
+	if (!s)
+		return (NULL);
+	size = ft_strlen(s);
+	if (size > len)
+		size = len;
+	substr = malloc(size + 1);
+	if (!substr)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (i < start && s[i])
-		i++;
-	while (j < len && s[i])
+	while (s[i] != '\0')
 	{
-		res[j] = s[i];
+		if (i >= start && j < len)
+			substr[j++] = s[i];
 		i++;
-		j++;
 	}
-	res[j] = '\0';
-	return (res);
+	substr[j] = '\0';
+	return (substr);
 }

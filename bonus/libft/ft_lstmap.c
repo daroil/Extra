@@ -3,40 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 01:42:15 by sbritani          #+#    #+#             */
-/*   Updated: 2022/10/24 02:00:46 by sbritani         ###   ########.fr       */
+/*   Created: 2022/10/16 12:37:39 by dhendzel          #+#    #+#             */
+/*   Updated: 2022/10/23 19:48:27 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_list	*rec(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*res;
-
-	if (!lst)
-		return (NULL);
-	res = malloc(sizeof(t_list));
-	if (!res)
-		return (NULL);
-	res->content = f(lst->content);
-	res->next = rec(lst->next, f, del);
-	return (res);
-}
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*res;
+	t_list	*second;
+	t_list	*new_start;
+	t_list	*tmp_node;
 
-	res = rec(lst, f, del);
-	if (!res)
+	if (!f || !del || lst == NULL)
 		return (NULL);
-	if (ft_lstsize(res) != ft_lstsize(lst))
-	{	
-		ft_lstclear(&res, del);
+	second = ft_lstnew(f(lst->content));
+	if (second == NULL)
 		return (NULL);
+	new_start = second;
+	lst = lst->next;
+	while (lst)
+	{
+		tmp_node = ft_lstnew(NULL);
+		if (!tmp_node)
+		{
+			ft_lstclear(&second, del);
+			return (NULL);
+		}
+		tmp_node->content = f(lst->content);
+		ft_lstadd_back(&second, tmp_node);
+		lst = lst->next;
 	}
-	return (res);
+	return (new_start);
 }
