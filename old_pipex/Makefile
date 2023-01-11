@@ -6,7 +6,7 @@
 #    By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 15:26:49 by dhendzel          #+#    #+#              #
-#    Updated: 2022/12/30 03:36:23 by dhendzel         ###   ########.fr        #
+#    Updated: 2023/01/07 05:44:55 by dhendzel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ re: fclean all
 
 norm:
 	norminette $(SRCS) 
+	@$(MAKE) -C $(LIBFT) norm
 
 # ./pipex infile "ls -l" "wc -l" outfile
 

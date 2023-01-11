@@ -6,7 +6,7 @@
 #    By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 18:24:12 by sbritani          #+#    #+#              #
-#    Updated: 2023/01/11 01:44:12 by dhendzel         ###   ########.fr        #
+#    Updated: 2023/01/11 01:48:50 by dhendzel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,9 +55,11 @@ fclean : clean
 	$(RM) $(NAME)
 	@$(MAKE) -C $(LIBFT) fclean
 
-bonus: $(BONUS_OBJS)
+bonus: libft bonuss 
+
+bonuss: $(BONUS_OBJS)
 	gcc $(CFLAGS) $(LIBFT)/libft.a $^ -o $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re norm libft bonus
+.PHONY: all clean fclean re libft bonus
