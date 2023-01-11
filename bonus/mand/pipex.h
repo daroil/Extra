@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 18:19:57 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/07 04:24:51 by sbritani         ###   ########.fr       */
+/*   Updated: 2023/01/11 01:38:21 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <sys/wait.h>
 # include <sys/types.h>
 # include <sys/uio.h>

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:50:31 by sbritani          #+#    #+#             */
-/*   Updated: 2023/01/09 16:51:31 by sbritani         ###   ########.fr       */
+/*   Updated: 2023/01/11 01:38:15 by dhendzel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <sys/wait.h>
 # include <sys/types.h>
 # include <sys/uio.h>

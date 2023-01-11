@@ -3,47 +3,61 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sbritani <sbritani@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: dhendzel <dhendzel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/03 18:24:12 by sbritani          #+#    #+#              #
-#    Updated: 2023/01/09 17:01:06 by sbritani         ###   ########.fr        #
+#    Updated: 2023/01/11 01:44:12 by dhendzel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-SRCS = 	main.c utils.c paths.c pipes.c plumbs.c
-BONUS_SRCS = 	main_bonus.c utils_bonus.c paths_bonus.c pipes_bonus.c plumbs_bonus.c
-NAME =  pipex
-BONUS_NAME =  pipex_bonus
+NAME = pipex
+CFLAGS = -Wall -Wextra -Werror 
+RM = rm -f
 LIBFT	:= ./libft
-OBJ	= $(SRCS:.c=.o)
-BONUS_OBJ	= $(BONUS_SRCS:.c=.o)
-CFLAGS = -Wall -Werror -Wextra
+MAND_SRCS = main \
+			paths \
+			pipes \
+			plumbs \
+			utils
 
-all: libft $(NAME)
+BONUS_SRCS = main \
+			paths \
+			pipes \
+			plumbs \
+			utils
+
+MAND_OBJS = $(MAND_FIL:.c=.o)
+BONUS_OBJS = $(BONUS_FIL:.c=.o)
+
+MAND_FIL = $(addsuffix .c, $(addprefix mand/, $(MAND_SRCS))) \
+
+BONUS_FIL = $(addsuffix _bonus.c, $(addprefix bonus/, $(MAND_SRCS))) \
+
+
+all : libft $(NAME)
 
 libft:
 	@$(MAKE) -C $(LIBFT)
+	
+$(MAND_OBJS): %.o : %.c
+	gcc $(CFLAGS) -c -o $@ $<
 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
 
-bonus: libft $(BONUS_OBJ)
-	$(CC) $(BONUS_OBJ) $(LIBFT)/libft.a -o $(BONUS_NAME)
+$(NAME) : $(MAND_OBJS)
+	gcc $(CFLAGS)  $(LIBFT)/libft.a $^ -o $@
 
-clean:
-	rm -f $(OBJ)
-	rm -f $(BONUS_OBJ)
+clean :
+	$(RM) $(MAND_OBJS) $(BONUS_OBJS)
 	@$(MAKE) -C $(LIBFT) clean
 
-fclean: clean
-	rm -f $(NAME)
-	rm -f $(BONUS_NAME)
+fclean : clean
+	$(RM) $(NAME)
 	@$(MAKE) -C $(LIBFT) fclean
 
-re: fclean all
+bonus: $(BONUS_OBJS)
+	gcc $(CFLAGS) $(LIBFT)/libft.a $^ -o $(NAME)
 
-norm:
-	norminette $(SRCS) pipex.h
+re: fclean all
 
 .PHONY: all clean fclean re norm libft bonus
